@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "build": "parcel build src/index.html"
   },
   "author": "Alba de Vega",
   "license": "ISC",
