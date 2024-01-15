@@ -1,0 +1,62 @@
+
+
+[
+    {
+    "nombre" : "Montserrat",
+    "serifa": false,
+    "clasificacion":"grotesca",
+    "variantes": { 
+        "grosores": [100, 200, 300, 400, 500, 600, 700, 800, 900],
+        "italica" : true,
+        "grosores_it" : [100,200,300,400,500,600,700,800,900]
+    },
+    "diseño": ["Julieta Ulanovsky"],
+    "link": "https://fonts.google.com/specimen/Montserrat?query=montserrat",
+    "ejemplos": "https://fontsinuse.com/typefaces/32481/montserrat"
+    },
+    {
+    "nombre": "GFS Didot",
+    "serifa": true,
+    "clasificacion": "moderna", 
+    "variantes": {
+        "grosores" : [400],
+        "italica" : false,
+        "grosores_it" : [0]
+        },
+        "diseño": [
+            "Firmin Didot",
+            "Greek Font Society"
+        ],
+    "link" : "https://fonts.google.com/specimen/GFS+Didot?query=didot",
+    "ejemplos" : "https://fontsinuse.com/search?terms=didot&page=1"
+    },
+    {
+        "nombre": "Josefin Sans",
+        "serifa": false,
+        "clasificacion": "geometrica",
+        "variantes" : {
+            "grosores": [100, 200, 300, 400, 500, 600, 700],
+            "italica" : true,
+            "grosores_it" : [100,200,300,400,500,600,700]
+        },
+        "diseño": ["Santiago Orozco"],
+        "link": "https://fonts.google.com/specimen/Josefin+Sans?query=josefin+sans",
+        "ejemplos": "https://fontsinuse.com/typefaces/98823/josefin-sans"
+    },
+    {
+        "nombre": "Libre Baskerville",
+        "serifa": true,
+        "clasificacion": "transicion",
+        "variantes" : {
+            "grosores": [400, 700],
+            "italica" : true,
+            "grosores_it" : [400]
+        },
+        "diseño": [
+            "John Baskerville",
+            "Impallari Type "
+        ],
+        "link": "https://fonts.google.com/specimen/Libre+Baskerville?query=baskerville",
+        "ejemplos": "https://fontsinuse.com/typefaces/1145/baskerville"
+    }
+]
