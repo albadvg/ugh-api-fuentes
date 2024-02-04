@@ -1,7 +1,7 @@
 //traerse el modelo
 const Font = require('../models/fontModel');
 //codigos error
-const HTTPSTATUSCODE = require('../utils/db');
+const HTTPSTATUSCODE = require('../../utils/db');
 
 //controlador para el get de todas las fuentes
 const getFonts = async (req, res) => {

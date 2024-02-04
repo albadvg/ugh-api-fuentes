@@ -6,8 +6,8 @@ const cors = require('cors');
 const logger = require('morgan');
 
 /*MÓDULOS PROPIOS*/
-const HTTPSTATUSCODE = require('./src/utils/httpStatusCode');
-const connectMongo = require('./src/utils/db');
+const HTTPSTATUSCODE = require('./utils/httpStatusCode');
+const connectMongo = require('./utils/db');
 /*rutas*/
 const fontsRouter = require('./src/routes/fontRoutes');
 const usersRouter = require('./src/routes/userRoutes');

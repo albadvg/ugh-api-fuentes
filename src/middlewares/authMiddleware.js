@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken")
-const HTTPSTATUSCODE = require('../utils/httpStatusCode');
+const HTTPSTATUSCODE = require('../../utils/httpStatusCode');
 
 const isAuth = (req, res, next) => {
     //coger la cabecera con el token

@@ -1,5 +1,5 @@
 const Project = require('../models/projectModel');
-const HTTPSTATUSCODE = require('../utils/httpStatusCode')
+const HTTPSTATUSCODE = require('../../utils/httpStatusCode')
 
 const getProjects = async (req, res) => {
     try {
