@@ -22,26 +22,24 @@ connectMongo();
 
 /*INICIAR SERVIDOR*/
 const app = express();
+app.use(cors());
+
+/*CONFIGURACIÓN ENCABEZADOS CORS*/
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Methods', 'GET,PATCH,POST,DELETE');
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Acess-Control-Allow-Headers', 'Content-Type');
+    next();
+})
+
 app.use(express.json()); //interpretar peticiones en json
 app.use(express.urlencoded({extended: true}));//codificar urls en base al estandar
 
 /*SANEAR PETICIONES*/
 mongoSanitize();
 
-/*CONFIGURACIÓN ENCABEZADOS CORS*/
-app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Credentials', true);
-    res.header('Acess-Control-Allow-Headers', 'Content-Type');
-    next();
-})
-
-app.use(cors());
-
 /*loggear por consola info de la request con el formato predefinido "dev"*/
 app.use(logger('dev'));
-/*desactivar el encabezado http x-powered-by, que muestra la tecnología con que se desarrolló la api*/
-app.disable('x-powered-by');
 /*esto crea una variable llamada secretKey, con un valor nodeRestApi, pero no se para qué*/
 /*creo que es una clave que se usa para firmar y verificar el jwt*/
 app.set('secretKey', 'nodeRestApi');
@@ -50,11 +48,18 @@ app.set('secretKey', 'nodeRestApi');
 app.use('/api/fuentes', fontsRouter);
 app.use('/api/usuario', usersRouter);
 app.use('/api/proyectos', projectsRouter);
-app.get('/', (req, res) => {
+app.get('/', (req, res, next) => {
     res.status(200).json({
-        message: 'Estás en la ruta base'
+        status: 200,
+    data: {
+      method: "GET",
+      message: "Bienvenido a la app. Estás en la ruta base",
+    },
     })
 })
+
+/*desactivar el encabezado http x-powered-by, que muestra la tecnología con que se desarrolló la api*/
+app.disable('x-powered-by');
 
 /*MANEJO DE ERRORES*/
 app.use((req, res, next) => {
@@ -63,6 +68,7 @@ app.use((req, res, next) => {
     error.message = HTTPSTATUSCODE[404];
     next(error);
 })
+
 app.use((error, req, res, next) => {
     return res.status(error.status || 500).json(error.message || 'Unexpected error');
 })
